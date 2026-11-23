@@ -205,6 +205,16 @@ p {
   color: var(--on-accent);
 }
 
+.actions a.primary {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+.actions a.primary:hover {
+  background: transparent;
+  color: var(--accent);
+}
+
 section {
   padding: 2.15rem 0;
   scroll-margin-top: 4.5rem;

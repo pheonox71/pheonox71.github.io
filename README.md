@@ -18,9 +18,13 @@ The copy is the approved headline, About, and resume bullets. Keep edits to that
 
 Where things live in `index.html`:
 
-- Hero: name, headline, GitHub, and LinkedIn. An HTML comment marks where to add an email address and a resume PDF.
+- Hero: name, headline, and links for GitHub, LinkedIn, email, and the resume PDF.
 - What I bring, Featured projects, Experience, Skills, and Education are the sections below it.
-- Footer repeats the GitHub and LinkedIn links.
+- Footer repeats those same contact links.
+
+## Updating the resume
+
+Replace `resume/Chance_Brenchley_Resume.pdf` with the new one-page PDF. Keep that path and that filename. The hero and the footer both link to `resume/Chance_Brenchley_Resume.pdf`, so swapping the file is the whole update. Do not rename it, and do not edit `index.html` unless the email address changes. The email buttons use `mailto:chancehardman71@gmail.com`.
 
 ## Project links
 
