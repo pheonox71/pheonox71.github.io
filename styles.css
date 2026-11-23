@@ -1,0 +1,359 @@
+/* Single-column portfolio. Edit surfaces and the accent in :root (light) and the dark scheme below. */
+
+:root {
+  color-scheme: light;
+  --bg: #f7f5f0;
+  --text: #1c1917;
+  --muted: #5c564e;
+  --accent: #0b5c56;
+  --on-accent: #ffffff;
+  --card: #fffcf8;
+  --tag: #efeae1;
+  --line: #8a8175;
+  --rule: #e4dfd6;
+  --header: #f7f5f0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --bg: #141311;
+    --text: #f6f3ec;
+    --muted: #b7b0a4;
+    --accent: #8ee4da;
+    --on-accent: #102220;
+    --card: #211f1c;
+    --tag: #2c2925;
+    --line: #7a7268;
+    --rule: #3a362f;
+    --header: #141311;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--bg);
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  overflow-wrap: break-word;
+}
+
+.column {
+  width: min(100%, 800px);
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 4vw, 1.5rem);
+}
+
+.skip {
+  position: absolute;
+  left: 1rem;
+  top: 0;
+  transform: translateY(-120%);
+  background: var(--accent);
+  color: var(--on-accent);
+  padding: 0.6rem 1rem;
+  z-index: 20;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.skip:focus {
+  transform: translateY(0.5rem);
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--header);
+  border-bottom: 1px solid var(--rule);
+}
+
+.site-nav,
+nav {
+  padding-block: 0.15rem;
+}
+
+nav ul,
+.actions,
+.tags {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.1rem 0.15rem;
+}
+
+nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0.2rem 0.55rem;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.95rem;
+  border-radius: 0.35rem;
+}
+
+nav a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+h1 {
+  margin: 0 0 0.75rem;
+  font-size: clamp(2.05rem, 5vw, 2.75rem);
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+h2 {
+  margin: 0 0 1rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+h3 {
+  margin: 0 0 0.3rem;
+  font-size: 1.12rem;
+  font-weight: 600;
+}
+
+p {
+  margin: 0 0 0.75rem;
+}
+
+.hero {
+  padding-top: 2.25rem;
+}
+
+.headline {
+  margin: 0;
+  max-width: 36rem;
+  font-size: 1.25rem;
+  line-height: 1.35;
+  font-weight: 600;
+}
+
+.headline span {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 1.12rem;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.headline .stack {
+  color: var(--muted);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.role {
+  margin: 0 0 0.75rem;
+  color: var(--muted);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.15rem;
+}
+
+.actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.35rem 1rem;
+  border: 2px solid var(--accent);
+  border-radius: 999px;
+  color: var(--accent);
+  background: transparent;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.actions a:hover {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+section {
+  padding: 2.15rem 0;
+  scroll-margin-top: 4.5rem;
+}
+
+section + section {
+  border-top: 1px solid var(--rule);
+}
+
+.bring {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bring li {
+  margin: 0;
+  padding: 0.7rem 0 0.7rem 0.9rem;
+  border-left: 3px solid var(--accent);
+}
+
+.bring li + li {
+  margin-top: 0.65rem;
+}
+
+.cards {
+  display: grid;
+  gap: 1rem;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 0.7rem;
+  padding: 1.1rem 1.15rem 1.15rem;
+}
+
+.card ul:not(.tags):not(.actions) {
+  margin: 0.25rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.card ul:not(.tags):not(.actions) li + li {
+  margin-top: 0.4rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.95rem;
+}
+
+.tags li {
+  padding: 0.2rem 0.6rem;
+  background: var(--tag);
+  color: var(--text);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.skills {
+  margin: 0;
+}
+
+.skills div + div {
+  margin-top: 1.1rem;
+}
+
+.skills dt {
+  font-weight: 700;
+  margin-bottom: 0.15rem;
+}
+
+.skills dd {
+  margin: 0;
+  color: var(--text);
+}
+
+.site-footer {
+  border-top: 1px solid var(--rule);
+  padding: 1.5rem 0 2.5rem;
+}
+
+.site-footer p {
+  margin: 0;
+  font-weight: 700;
+}
+
+address {
+  font-style: normal;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: #c5e4df;
+  color: #1c1917;
+}
+
+@media (prefers-color-scheme: dark) {
+  ::selection {
+    background: #1d4f4b;
+    color: #f6f3ec;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+@media print {
+  .site-header,
+  .skip {
+    display: none;
+  }
+
+  body {
+    background: #fff;
+    color: #000;
+  }
+
+  .card {
+    break-inside: avoid;
+  }
+
+  a {
+    color: #000;
+  }
+}
