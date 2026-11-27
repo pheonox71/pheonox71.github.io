@@ -179,6 +179,11 @@ p {
   color: var(--muted);
 }
 
+.dates {
+  display: block;
+  margin-top: 0.15rem;
+}
+
 .actions {
   display: flex;
   flex-wrap: wrap;
